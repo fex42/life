@@ -5,7 +5,7 @@ import java.awt.*
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
-class BoardPanel(private var board: Board) : JPanel(), ActionListener {
+class BoardPanel(var board: Board) : JPanel(), ActionListener {
 
     init {
         Timer(150, this).start()

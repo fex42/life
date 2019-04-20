@@ -10,7 +10,8 @@ data class Board(val width: Int, val height: Int, val cells: Set<Pos>)
 
     private fun survivors(): Set<Pos> = cells.filter { liveNeighbours(it) in 2..3 }.toSet()
 
-    private fun births(): Set<Pos> = cells.flatMap { c -> c.neighbours(width, height) }.filter { isEmpty(it) }.filter { liveNeighbours(it) == 3}.toSet()
+    private fun births(): Set<Pos> = cells.flatMap { it.neighbours(width, height) }
+            .filter { isEmpty(it) }.filter { liveNeighbours(it) == 3}.toSet()
 
     fun nextGen(): Board = Board(width, height, births().plus(survivors()))
 }
