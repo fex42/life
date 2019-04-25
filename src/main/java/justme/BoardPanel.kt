@@ -8,7 +8,7 @@ import java.awt.event.ActionListener
 class BoardPanel(var board: Board) : JPanel(), ActionListener {
 
     init {
-        Timer(150, this).start()
+        Timer(250, this).start()
     }
 
     public override fun paintComponent(g: Graphics) {
